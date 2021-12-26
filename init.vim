@@ -44,7 +44,7 @@ Plug 'alvan/vim-closetag'
 call plug#end()
 
 " coc extensions
-let g:coc_global_extensions = ['coc-snippets', 'coc-pairs', 'coc-html', 'coc-explorer', 'coc-tsserver', 'coc-rust-analyzer', 'coc-json', 'coc-go', 'coc-clangd']
+let g:coc_global_extensions = ['coc-snippets', 'coc-pairs', 'coc-html', 'coc-explorer', 'coc-tsserver', 'coc-rust-analyzer', 'coc-json', 'coc-go', 'coc-clangd', 'coc-css']
 
 " coc config
 source $HOME/.config/nvim/plug-config/coc.vim	
