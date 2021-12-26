@@ -55,3 +55,6 @@ set bg=dark
 
 " explorer
 :nmap <space>e <Cmd>CocCommand explorer<CR>
+
+" getting coc-pairs and vim-closetag to work with each other
+autocmd FileType html let b:coc_pairs_disabled = ['<']
