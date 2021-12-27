@@ -56,5 +56,10 @@ set bg=dark
 " explorer
 :nmap <space>e <Cmd>CocCommand explorer<CR>
 
-" getting coc-pairs and vim-closetag to work with each other
+" coc-pairs to comply with closetag
 autocmd FileType html let b:coc_pairs_disabled = ['<']
+
+" coc go 
+autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')
+
+command! -nargs=0 OR :silent call CocAction('runCommand', 'editor.action.organizeImport')
