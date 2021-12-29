@@ -35,6 +35,9 @@ set confirm
 :nmap <c-s> :w<CR>
 :imap <c-s> <Esc>:w<CR>
 
+" terminal shortcut
+nmap <c-t> :vert term<CR>
+
 call plug#begin('~/.config/nvim/plugged')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'morhetz/gruvbox'

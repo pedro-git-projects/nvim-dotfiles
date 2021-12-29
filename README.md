@@ -10,6 +10,8 @@
 
 'ctrl s' saves
 
+'ctrl t' opens a vertical terminal
+
 ### Explorer
 
 'spc + e'  opens/closes explorer
