@@ -24,6 +24,24 @@
 
 's' open split
 
+### Languages with ItelliSense
+
+ C
+
+ C++
+
+ C#
+
+ CSS
+
+ GO
+
+ HTML
+
+ Rust
+
+ TypeScript
+
 ### CoC 
 
 ':MarkdownPreview' previews md files
