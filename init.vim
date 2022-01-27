@@ -1,6 +1,9 @@
 " basic syntax highlighting
 syntax on
 
+" required by some plugins
+filetype plugin indent on
+
 " smaller indentation
 set autoindent
 set noexpandtab
@@ -44,10 +47,11 @@ Plug 'morhetz/gruvbox'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'alvan/vim-closetag'
+Plug 'lervag/vimtex'
 call plug#end()
 
 " coc extensions
-let g:coc_global_extensions = ['coc-snippets', 'coc-pairs', 'coc-html', 'coc-explorer', 'coc-tsserver', 'coc-rust-analyzer', 'coc-json', 'coc-go', 'coc-clangd', 'coc-css, coc-omnisharp']
+let g:coc_global_extensions = ['coc-snippets', 'coc-pairs', 'coc-html', 'coc-explorer', 'coc-tsserver', 'coc-rust-analyzer', 'coc-json', 'coc-go', 'coc-clangd', 'coc-css', 'coc-vimtex']
 
 " coc config
 source $HOME/.config/nvim/plug-config/coc.vim	
@@ -66,3 +70,9 @@ autocmd FileType html let b:coc_pairs_disabled = ['<']
 autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')
 
 command! -nargs=0 OR :silent call CocAction('runCommand', 'editor.action.organizeImport')
+
+" vim tex
+let g:vimtex_view_method = 'zathura'
+
+" vim tex dependencies
+" biber, texmk (texlive-most)

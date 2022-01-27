@@ -26,6 +26,12 @@
 
 's' open split
 
+### LaTex
+
+'\ll' compiles the document
+
+'ctl s' recompiles it
+
 ### Languages with ItelliSense
 
  C
@@ -44,7 +50,8 @@
 
  TypeScript
 
+ LaTex
+
 ### CoC 
 
 ':MarkdownPreview' previews md files
-
