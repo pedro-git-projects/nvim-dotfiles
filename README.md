@@ -32,6 +32,23 @@
 
 'ctl s' recompiles it
 
+### Emmet
+
+'\<c-y\>,' after typing html:5 generates:
+
+```html
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	_
+</body>
+</html>
+```
+
 ### Languages with ItelliSense
 
  C
