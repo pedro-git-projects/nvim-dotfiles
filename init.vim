@@ -67,6 +67,9 @@ set bg=dark
 " coc-pairs to comply with closetag
 autocmd FileType html let b:coc_pairs_disabled = ['<']
 
+" close tag on go tmpl files
+autocmd BufNewFile,BufRead *.tmpl set filetype=html
+
 " coc go 
 autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')
 
