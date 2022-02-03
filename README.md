@@ -26,11 +26,32 @@
 
 's' open split
 
+### Go
+
+Compile your package with **:GoBuild**, install it with **:GoInstall**  test with **:GoTest** and run with **:GoRun**.   
+Run a single test with **:GoTestFunc**
+
+Debug programs with integrated delve support with **:GoDebugStart**.
+
+Look up documentation with **:GoDoc** or **:GoDocBrowser**.
+
+Easily import packages via **:GoImport**, remove them via **:GoDrop**.
+
+Precise type-safe renaming of identifiers with **:GoRename.**
+
+See which code is covered by tests with **:GoCoverage.**
+
+Add or remove tags on struct fields with **:GoAddTags and :GoRemoveTags**.
+
 ### LaTex
 
 '\ll' compiles the document
 
 'ctl s' recompiles it
+
+### Markdown
+
+Preview markdown with **:MarkdownPreview**
 
 ### Emmet
 
@@ -69,6 +90,3 @@
 
  LaTex
 
-### CoC 
-
-':MarkdownPreview' previews md files

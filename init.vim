@@ -49,10 +49,11 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'alvan/vim-closetag'
 Plug 'lervag/vimtex'
 Plug 'mattn/emmet-vim'
+Plug 'fatih/vim-go'
 call plug#end()
 
 " coc extensions
-let g:coc_global_extensions = ['coc-snippets', 'coc-pairs', 'coc-html', 'coc-explorer', 'coc-tsserver', 'coc-rust-analyzer', 'coc-json', 'coc-go', 'coc-clangd', 'coc-css', 'coc-vimtex', 'coc-python']
+let g:coc_global_extensions = ['coc-snippets', 'coc-pairs', 'coc-html', 'coc-explorer', 'coc-tsserver', 'coc-rust-analyzer', 'coc-json', 'coc-clangd', 'coc-css', 'coc-vimtex', 'coc-python']
 
 " coc config
 source $HOME/.config/nvim/plug-config/coc.vim	
