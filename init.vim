@@ -50,6 +50,7 @@ Plug 'alvan/vim-closetag'
 Plug 'lervag/vimtex'
 Plug 'mattn/emmet-vim'
 Plug 'fatih/vim-go'
+Plug 'rust-lang/rust.vim'
 call plug#end()
 
 " coc extensions
@@ -81,3 +82,7 @@ let g:vimtex_view_method = 'zathura'
 
 " vim tex dependencies
 " biber, texmk (texlive-most)
+
+" rust
+let g:rustfmt_autosave = 1
+

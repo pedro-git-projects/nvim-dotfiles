@@ -28,6 +28,8 @@
 
 ### Go
 
+Imports on save
+
 Compile your package with **:GoBuild**, install it with **:GoInstall**  test with **:GoTest** and run with **:GoRun**.   
 Run a single test with **:GoTestFunc**
 
@@ -42,6 +44,14 @@ Precise type-safe renaming of identifiers with **:GoRename.**
 See which code is covered by tests with **:GoCoverage.**
 
 Add or remove tags on struct fields with **:GoAddTags and :GoRemoveTags**.
+
+### Rust
+
+Formats on save
+
+**RustRun** runs the code
+
+**RustTest** will run the test that is under the curso
 
 ### LaTex
 
