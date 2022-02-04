@@ -49,9 +49,9 @@ Add or remove tags on struct fields with **:GoAddTags and :GoRemoveTags**.
 
 Formats on save
 
-**RustRun** runs the code
+**:RustRun** runs the code
 
-**RustTest** will run the test that is under the curso
+**:RustTest** will run the test that is under the curso
 
 ### LaTex
 
