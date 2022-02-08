@@ -12,6 +12,8 @@
 
 'ctrl t' opens a vertical terminal
 
+'ctrl ]' jumps to function definition
+
 ### Explorer
 
 'spc + e'  opens/closes explorer
