@@ -14,6 +14,10 @@
 
 'ctrl ]' jumps to function definition
 
+'ctrl T' jumps back from function definition
+
+'gg = G' tides up files
+
 ### Explorer
 
 'spc + e'  opens/closes explorer
@@ -67,7 +71,7 @@ Preview markdown with **:MarkdownPreview**
 
 ### Emmet
 
-'\<c-y\>,' after typing html:5 generates:
+'\<c-y\>,' (ctrl y ,) after typing html:5 generates:
 
 ```html
 <!DOCTYPE HTML>
@@ -80,6 +84,19 @@ Preview markdown with **:MarkdownPreview**
 	_
 </body>
 </html>
+```
+
+The same command when applied to 
+
+```html
+div.test
+```
+
+will generate 
+
+```html
+<div class="test">
+</test>
 ```
 
 ### Languages with ItelliSense
