@@ -32,6 +32,18 @@
 
 's' open split
 
+'df' deletes file
+
+'yp' copyFilepath
+    
+'yn' "copyFilename"
+
+'yy' "copyFile"
+
+'dd' 'cutFile'
+
+'p' 'pasteFile'
+
 ### Go
 
 Imports on save

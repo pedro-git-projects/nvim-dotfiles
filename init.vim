@@ -41,6 +41,9 @@ set confirm
 " terminal shortcut
 nmap <c-t> :vert term<CR>
 
+" clipboard copy has xclip as dependency
+set clipboard=unnamedplus
+
 call plug#begin('~/.config/nvim/plugged')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'morhetz/gruvbox'
@@ -51,10 +54,12 @@ Plug 'lervag/vimtex'
 Plug 'mattn/emmet-vim'
 Plug 'fatih/vim-go'
 Plug 'rust-lang/rust.vim'
+Plug 'amadeus/vim-css'
+Plug 'maxmellon/vim-jsx-pretty'
 call plug#end()
 
 " coc extensions
-let g:coc_global_extensions = ['coc-snippets', 'coc-pairs', 'coc-html', 'coc-explorer', 'coc-tsserver', 'coc-rust-analyzer', 'coc-json', 'coc-clangd', 'coc-css', 'coc-vimtex', 'coc-python', 'coc-go']
+let g:coc_global_extensions = ['coc-snippets', 'coc-pairs', 'coc-html', 'coc-explorer', 'coc-tsserver', 'coc-rust-analyzer', 'coc-json', 'coc-clangd', 'coc-vimtex', 'coc-python', 'coc-go']
 
 " coc config
 source $HOME/.config/nvim/plug-config/coc.vim	
@@ -86,3 +91,5 @@ let g:vimtex_view_method = 'zathura'
 " rust
 let g:rustfmt_autosave = 1
 
+" better closetag behaviour on react
+let g:closetag_xhtml_filetypes = 'xhtml,jsx, tsx'
