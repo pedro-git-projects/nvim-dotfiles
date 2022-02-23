@@ -56,10 +56,13 @@ Plug 'fatih/vim-go'
 Plug 'rust-lang/rust.vim'
 Plug 'amadeus/vim-css'
 Plug 'maxmellon/vim-jsx-pretty'
+Plug 'nvie/vim-flake8'
+"Plug 'm-pilia/vim-ccls'
+"Plug 'honza/vim-snippets'
 call plug#end()
 
 " coc extensions
-let g:coc_global_extensions = ['coc-snippets', 'coc-pairs', 'coc-html', 'coc-explorer', 'coc-tsserver', 'coc-rust-analyzer', 'coc-json', 'coc-clangd', 'coc-vimtex', 'coc-python', 'coc-go']
+let g:coc_global_extensions = ['coc-snippets', 'coc-pairs', 'coc-html', 'coc-explorer', 'coc-tsserver', 'coc-rust-analyzer', 'coc-json', 'coc-vimtex', 'coc-python', 'coc-go', 'coc-clangd']
 
 " coc config
 source $HOME/.config/nvim/plug-config/coc.vim	
@@ -76,6 +79,7 @@ autocmd FileType html let b:coc_pairs_disabled = ['<']
 
 " close tag on go tmpl files
 autocmd BufNewFile,BufRead *.tmpl set filetype=html
+autocmd BufNewFile,BufRead *.jet set filetype=html
 
 " coc go 
 autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')
@@ -93,3 +97,7 @@ let g:rustfmt_autosave = 1
 
 " better closetag behaviour on react
 let g:closetag_xhtml_filetypes = 'xhtml,jsx, tsx'
+
+" dependencies
+" python3 -m pip install pynvim
+" pip install flake8
