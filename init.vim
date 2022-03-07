@@ -57,12 +57,16 @@ Plug 'rust-lang/rust.vim'
 Plug 'amadeus/vim-css'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'nvie/vim-flake8'
+Plug 'neovimhaskell/haskell-vim'
+Plug 'othree/html5.vim'
+Plug 'pangloss/vim-javascript'
+Plug 'evanleck/vim-svelte', {'branch': 'main'}
 "Plug 'm-pilia/vim-ccls'
 "Plug 'honza/vim-snippets'
 call plug#end()
 
 " coc extensions
-let g:coc_global_extensions = ['coc-snippets', 'coc-pairs', 'coc-html', 'coc-explorer', 'coc-tsserver', 'coc-rust-analyzer', 'coc-json', 'coc-vimtex', 'coc-python', 'coc-go', 'coc-clangd']
+let g:coc_global_extensions = ['coc-snippets', 'coc-pairs', 'coc-html', 'coc-explorer', 'coc-tsserver', 'coc-rust-analyzer', 'coc-json', 'coc-vimtex', 'coc-python', 'coc-go', 'coc-clangd', 'coc-css', 'coc-svelte']
 
 " coc config
 source $HOME/.config/nvim/plug-config/coc.vim	

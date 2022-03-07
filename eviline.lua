@@ -208,3 +208,21 @@ gls.short_line_right[1] = {
     highlight = {colors.fg,colors.bg}
   }
 }
+
+
+require'lspconfig'.ccls.setup{
+
+}
+
+local lspconfig = require'lspconfig'
+lspconfig.ccls.setup {
+  init_options = {
+    compilationDatabaseDirectory = "build";
+    index = {
+      threads = 0;
+    };
+    clang = {
+      excludeArgs = { "-frounding-math"} ;
+    };
+  }
+}

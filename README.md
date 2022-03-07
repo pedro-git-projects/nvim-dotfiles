@@ -129,5 +129,7 @@ will generate
 
  TypeScript
 
+ Svelte
+
  LaTex
 
