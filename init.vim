@@ -44,6 +44,9 @@ nmap <c-t> :vert term<CR>
 " clipboard copy has xclip as dependency
 set clipboard=unnamedplus
 
+" python source
+let g:python3_host_prog='/usr/bin/python3'
+
 call plug#begin('~/.config/nvim/plugged')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'morhetz/gruvbox'
@@ -61,12 +64,13 @@ Plug 'neovimhaskell/haskell-vim'
 Plug 'othree/html5.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'evanleck/vim-svelte', {'branch': 'main'}
-"Plug 'm-pilia/vim-ccls'
-"Plug 'honza/vim-snippets'
+Plug 'nvim-lualine/lualine.nvim'
+Plug 'ryanoasis/vim-devicons'
+Plug 'davidhalter/jedi-vim'
 call plug#end()
 
 " coc extensions
-let g:coc_global_extensions = ['coc-snippets', 'coc-pairs', 'coc-html', 'coc-explorer', 'coc-tsserver', 'coc-rust-analyzer', 'coc-json', 'coc-vimtex', 'coc-python', 'coc-go', 'coc-clangd', 'coc-css', 'coc-svelte']
+let g:coc_global_extensions = ['coc-snippets', 'coc-pairs', 'coc-html', 'coc-explorer', 'coc-tsserver', 'coc-rust-analyzer', 'coc-json', 'coc-vimtex', 'coc-go', 'coc-clangd', 'coc-css', 'coc-svelte', 'coc-lua', 'coc-python']
 
 " coc config
 source $HOME/.config/nvim/plug-config/coc.vim	
@@ -105,3 +109,51 @@ let g:closetag_xhtml_filetypes = 'xhtml,jsx, tsx'
 " dependencies
 " python3 -m pip install pynvim
 " pip install flake8
+" bear for clang correct autocompletion of third party libraries
+
+lua << END
+require('lualine').setup {
+  options = {
+    icons_enabled = true,
+    theme = 'custom_gruvbox',
+--	section_separators = '', 
+--	component_separators = '',
+	component_separators = { left = '', right = ''},
+    section_separators = { left = '', right = ''},
+    disabled_filetypes = {},
+    always_divide_middle = true,
+    globalstatus = false,
+diff_color = {
+  added = {
+    fg = "#fe8019",
+  },
+  modified = {
+    fg = "#fe8019",
+  },
+  removed = {
+    fg = "#cc241d",
+  }
+}  },
+  sections = {
+    lualine_a = {'mode'},
+    lualine_b = {'branch', 'diff', 'diagnostics'},
+    lualine_c = {'filename'},
+    lualine_x = {'encoding', 'fileformat', 'filetype'},
+    lualine_y = {'progress'},
+    lualine_z = {'location'}
+  },
+  inactive_sections = {
+    lualine_a = {},
+    lualine_b = {},
+    lualine_c = {'filename'},
+    lualine_x = {'location'},
+    lualine_y = {},
+    lualine_z = {}
+  },
+  tabline = {},
+  extensions = {}
+}
+END
+
+" disable jedi completions for coc-python
+let g:jedi#completions_enabled = 0
