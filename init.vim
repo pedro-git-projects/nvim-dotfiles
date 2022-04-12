@@ -67,10 +67,14 @@ Plug 'evanleck/vim-svelte', {'branch': 'main'}
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'davidhalter/jedi-vim'
+Plug 'wlangstroth/vim-racket'
+Plug 'clojure-vim/clojure.vim'
+Plug 'vim-ruby/vim-ruby'
+Plug 'Olical/conjure'
 call plug#end()
 
 " coc extensions
-let g:coc_global_extensions = ['coc-snippets', 'coc-pairs', 'coc-html', 'coc-explorer', 'coc-tsserver', 'coc-rust-analyzer', 'coc-json', 'coc-vimtex', 'coc-go', 'coc-clangd', 'coc-css', 'coc-svelte', 'coc-lua', 'coc-python']
+let g:coc_global_extensions = ['coc-snippets', 'coc-pairs', 'coc-explorer', 'coc-html', 'coc-tsserver', 'coc-rust-analyzer', 'coc-json', 'coc-vimtex', 'coc-go', 'coc-clangd', 'coc-css', 'coc-svelte', 'coc-lua', 'coc-python', 'coc-java', 'coc-java-debug', 'coc-solargraph', 'coc-omnisharp']
 
 " coc config
 source $HOME/.config/nvim/plug-config/coc.vim	
@@ -157,3 +161,6 @@ END
 
 " disable jedi completions for coc-python
 let g:jedi#completions_enabled = 0
+
+" conjure
+map ee :ConjureEval<CR>

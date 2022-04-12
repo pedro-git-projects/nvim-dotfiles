@@ -77,6 +77,10 @@ Formats on save
 
 'ctl s' recompiles it
 
+### Lisp Family languages
+
+'ee' wil conjure a REPL
+
 ### Markdown
 
 Preview markdown with **:MarkdownPreview**
@@ -111,13 +115,17 @@ will generate
 </test>
 ```
 
-### Languages with ItelliSense
+### Languages with code completion && syntax highlighting 
 
  C
 
  C++
 
  C#
+
+ Common Lisp
+
+ Clojure
 
  CSS
 
@@ -127,7 +135,11 @@ will generate
 
  Rust
 
+ Racket
+
  TypeScript
+
+ Scheme
 
  Svelte
 
