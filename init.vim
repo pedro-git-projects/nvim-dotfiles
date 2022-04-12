@@ -71,6 +71,7 @@ Plug 'wlangstroth/vim-racket'
 Plug 'clojure-vim/clojure.vim'
 Plug 'vim-ruby/vim-ruby'
 Plug 'Olical/conjure'
+Plug 'junegunn/rainbow_parentheses.vim'
 call plug#end()
 
 " coc extensions
@@ -164,3 +165,9 @@ let g:jedi#completions_enabled = 0
 
 " conjure
 map ee :ConjureEval<CR>
+
+" rainbow parentheses
+augroup rainbow_lisp
+  autocmd!
+  autocmd FileType lisp,clojure,scheme RainbowParentheses
+augroup END
