@@ -8,5 +8,6 @@
     }
   },
   "svelte.enable-ts-plugin": true,
-  "python.jediPath":"/home/pedro/.local/lib/python3.10/site-packages"
+  "python.jediPath":"/home/pedro/.local/lib/python3.10/site-packages",
+  "java.jdt.ls.vmargs": "-javaagent:/usr/bin/lombok/lombok.jar"
 }

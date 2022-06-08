@@ -41,6 +41,10 @@ set confirm
 " terminal shortcut
 nmap <c-t> :vert term<CR>
 
+" tabbing visual selection
+vmap <Tab> >gv
+vmap <S-Tab> <gv
+
 " clipboard copy has xclip as dependency
 set clipboard=unnamedplus
 
@@ -72,13 +76,21 @@ Plug 'clojure-vim/clojure.vim'
 Plug 'vim-ruby/vim-ruby'
 Plug 'Olical/conjure'
 Plug 'junegunn/rainbow_parentheses.vim'
+Plug 'tpope/vim-commentary' 
+Plug 'othree/html5.vim'
+Plug 'pangloss/vim-javascript'
+Plug 'evanleck/vim-svelte', {'branch': 'main'}
 call plug#end()
 
 " coc extensions
-let g:coc_global_extensions = ['coc-snippets', 'coc-pairs', 'coc-explorer', 'coc-html', 'coc-tsserver', 'coc-rust-analyzer', 'coc-json', 'coc-vimtex', 'coc-go', 'coc-clangd', 'coc-css', 'coc-svelte', 'coc-lua', 'coc-python', 'coc-java', 'coc-java-debug', 'coc-solargraph', 'coc-omnisharp']
+let g:coc_global_extensions = ['coc-snippets', 'coc-pairs', 'coc-explorer', 'coc-html', 'coc-tsserver', 'coc-rust-analyzer', 'coc-json', 'coc-vimtex', 'coc-go', 'coc-clangd', 'coc-css', 'coc-lua', 'coc-python', 'coc-java', 'coc-java-debug', 'coc-solargraph', 'coc-omnisharp', 'coc-vetur', 'coc-svelte']
 
 " coc config
 source $HOME/.config/nvim/plug-config/coc.vim	
+
+" coc vetur (vueJS)
+" the following command needs to be ran in the project root
+" npm i eslint eslint-plugin-vue -D
 
 " theme
 autocmd vimenter * ++nested colorscheme gruvbox
@@ -92,6 +104,7 @@ autocmd FileType html let b:coc_pairs_disabled = ['<']
 
 " close tag on go tmpl files
 autocmd BufNewFile,BufRead *.tmpl set filetype=html
+autocmd BufNewFile,BufRead *.gohtml set filetype=html
 autocmd BufNewFile,BufRead *.jet set filetype=html
 
 " coc go 
