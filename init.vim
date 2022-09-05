@@ -55,7 +55,7 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'morhetz/gruvbox'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 Plug 'alvan/vim-closetag'
 Plug 'lervag/vimtex'
 Plug 'mattn/emmet-vim'
@@ -80,14 +80,27 @@ Plug 'tpope/vim-commentary'
 Plug 'othree/html5.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'evanleck/vim-svelte', {'branch': 'main'}
+Plug 'rhysd/vim-clang-format'
+Plug 'arcticicestudio/nord-vim'
+Plug 'preservim/nerdtree'
+"Plug 'andweeb/presence.nvim'
 call plug#end()
 
 " coc extensions
-let g:coc_global_extensions = ['coc-snippets', 'coc-pairs', 'coc-explorer', 'coc-html', 'coc-tsserver', 'coc-rust-analyzer', 'coc-json', 'coc-vimtex', 'coc-go', 'coc-clangd', 'coc-css', 'coc-lua', 'coc-python', 'coc-java', 'coc-java-debug', 'coc-solargraph', 'coc-omnisharp', 'coc-vetur', 'coc-svelte']
+let g:coc_global_extensions = ['coc-snippets', 'coc-pairs', 'coc-html', 'coc-tsserver', 'coc-rust-analyzer', 'coc-json', 'coc-vimtex', 'coc-go', 'coc-clangd', 'coc-css', 'coc-lua', 'coc-python', 'coc-java', 'coc-java-debug', 'coc-solargraph', 'coc-vetur', 'coc-svelte']
 
 " coc config
 source $HOME/.config/nvim/plug-config/coc.vim	
-
+" fixing popups
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+    inoremap <silent><expr> <C-x><C-z> coc#pum#visible() ? coc#pum#stop() : "\<C-x>\<C-z>"
+    " remap for complete to use tab and <cr>
+    inoremap <silent><expr> <TAB>
+        \ coc#pum#visible() ? coc#pum#next(1):
+        \ <SID>check_back_space() ? "\<Tab>" :
+        \ coc#refresh()
+    inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+    inoremap <silent><expr> <c-space> coc#refresh()
 " coc vetur (vueJS)
 " the following command needs to be ran in the project root
 " npm i eslint eslint-plugin-vue -D
@@ -95,9 +108,11 @@ source $HOME/.config/nvim/plug-config/coc.vim
 " theme
 autocmd vimenter * ++nested colorscheme gruvbox
 set bg=dark
+" autocmd vimenter * ++nested colorscheme nord 
 
 " explorer
-:nmap <space>e <Cmd>CocCommand explorer<CR>
+" :nmap <space>e <Cmd>CocCommand explorer<CR>
+:nmap <space>e <Cmd>NERDTree<CR>
 
 " coc-pairs to comply with closetag
 autocmd FileType html let b:coc_pairs_disabled = ['<']
@@ -133,7 +148,9 @@ lua << END
 require('lualine').setup {
   options = {
     icons_enabled = true,
-    theme = 'custom_gruvbox',
+--	theme = 'onedark',
+--    theme = 'nord',
+  theme = 'custom_gruvbox',
 --	section_separators = '', 
 --	component_separators = '',
 	component_separators = { left = '', right = ''},
