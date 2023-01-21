@@ -1,5 +1,6 @@
  {
-  "languageserver": {
+"diagnostic.checkCurrentLine": true, 
+"languageserver": {
     "haskell": {
       "command": "haskell-language-server-wrapper",
       "args": ["--lsp"],

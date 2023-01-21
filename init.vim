@@ -48,6 +48,9 @@ vmap <S-Tab> <gv
 " clipboard copy has xclip as dependency
 set clipboard=unnamedplus
 
+" check flake8 on python write
+autocmd BufWritePost *.py call flake8#Flake8()
+
 " python source
 let g:python3_host_prog='/usr/bin/python3'
 
@@ -83,31 +86,45 @@ Plug 'evanleck/vim-svelte', {'branch': 'main'}
 Plug 'rhysd/vim-clang-format'
 Plug 'arcticicestudio/nord-vim'
 Plug 'preservim/nerdtree'
-"Plug 'andweeb/presence.nvim'
+Plug 'OmniSharp/omnisharp-vim'
+Plug 'joshdick/onedark.vim'
+Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'sainnhe/everforest'
+Plug 'sainnhe/gruvbox-material'
+Plug 'sheerun/vim-polyglot'
+Plug 'psf/black'
+Plug 'yaegassy/coc-tailwindcss3'
+Plug 'marko-cerovac/material.nvim'
 call plug#end()
 
 " coc extensions
-let g:coc_global_extensions = ['coc-snippets', 'coc-pairs', 'coc-html', 'coc-tsserver', 'coc-rust-analyzer', 'coc-json', 'coc-vimtex', 'coc-go', 'coc-clangd', 'coc-css', 'coc-lua', 'coc-python', 'coc-java', 'coc-java-debug', 'coc-solargraph', 'coc-vetur', 'coc-svelte']
+let g:coc_global_extensions = ['coc-snippets', 'coc-pairs', 'coc-html', 'coc-tsserver', 'coc-rust-analyzer', 'coc-json', 'coc-vimtex', 'coc-css', 'coc-lua', 'coc-python', 'coc-java', 'coc-java-debug', 'coc-solargraph', 'coc-vetur', 'coc-svelte', 'coc-go']
 
 " coc config
 source $HOME/.config/nvim/plug-config/coc.vim	
 " fixing popups
-inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-    inoremap <silent><expr> <C-x><C-z> coc#pum#visible() ? coc#pum#stop() : "\<C-x>\<C-z>"
-    " remap for complete to use tab and <cr>
-    inoremap <silent><expr> <TAB>
-        \ coc#pum#visible() ? coc#pum#next(1):
-        \ <SID>check_back_space() ? "\<Tab>" :
-        \ coc#refresh()
-    inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
-    inoremap <silent><expr> <c-space> coc#refresh()
+" use <tab> for trigger completion and navigate to the next complete item
+function! CheckBackspace() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+inoremap <silent><expr> <Tab>
+      \ coc#pum#visible() ? coc#pum#next(1) :
+      \ CheckBackspace() ? "\<Tab>" :
+      \ coc#refresh()
+inoremap <expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "\<CR>""    inoremap <silent><expr> <c-space> coc#refresh()
 " coc vetur (vueJS)
 " the following command needs to be ran in the project root
 " npm i eslint eslint-plugin-vue -D
 
 " theme
-autocmd vimenter * ++nested colorscheme gruvbox
-set bg=dark
+" colorscheme nord 
+" colorscheme dracula
+" colorscheme onedark 
+" autocmd vimenter * ++nested colorscheme gruvbox
+autocmd vimenter * ++nested colorscheme gruvbox-material
+"autocmd vimenter * ++nested colorscheme everforest 
+" set bg=dark
 " autocmd vimenter * ++nested colorscheme nord 
 
 " explorer
@@ -148,9 +165,10 @@ lua << END
 require('lualine').setup {
   options = {
     icons_enabled = true,
---	theme = 'onedark',
+	theme = 'gruvbox',
+--	theme = 'dracula',
 --    theme = 'nord',
-  theme = 'custom_gruvbox',
+--  theme = 'custom_gruvbox',
 --	section_separators = '', 
 --	component_separators = '',
 	component_separators = { left = '', right = ''},
