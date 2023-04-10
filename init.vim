@@ -45,6 +45,8 @@ nmap <c-t> :vert term<CR>
 vmap <Tab> >gv
 vmap <S-Tab> <gv
 
+"
+
 " clipboard copy has xclip as dependency
 set clipboard=unnamedplus
 
@@ -67,7 +69,6 @@ Plug 'rust-lang/rust.vim'
 Plug 'amadeus/vim-css'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'nvie/vim-flake8'
-Plug 'neovimhaskell/haskell-vim'
 Plug 'othree/html5.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'evanleck/vim-svelte', {'branch': 'main'}
@@ -75,30 +76,21 @@ Plug 'nvim-lualine/lualine.nvim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'davidhalter/jedi-vim'
 Plug 'wlangstroth/vim-racket'
-Plug 'clojure-vim/clojure.vim'
-Plug 'vim-ruby/vim-ruby'
-Plug 'Olical/conjure'
-Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'tpope/vim-commentary' 
 Plug 'othree/html5.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'evanleck/vim-svelte', {'branch': 'main'}
 Plug 'rhysd/vim-clang-format'
-Plug 'arcticicestudio/nord-vim'
 Plug 'preservim/nerdtree'
-Plug 'OmniSharp/omnisharp-vim'
-Plug 'joshdick/onedark.vim'
-Plug 'dracula/vim', { 'as': 'dracula' }
-Plug 'sainnhe/everforest'
 Plug 'sainnhe/gruvbox-material'
 Plug 'sheerun/vim-polyglot'
 Plug 'psf/black'
 Plug 'yaegassy/coc-tailwindcss3'
-Plug 'marko-cerovac/material.nvim'
+Plug 'neovim/nvim-lspconfig'
 call plug#end()
 
 " coc extensions
-let g:coc_global_extensions = ['coc-snippets', 'coc-pairs', 'coc-html', 'coc-tsserver', 'coc-rust-analyzer', 'coc-json', 'coc-vimtex', 'coc-css', 'coc-lua', 'coc-python', 'coc-java', 'coc-java-debug', 'coc-solargraph', 'coc-vetur', 'coc-svelte', 'coc-go']
+let g:coc_global_extensions = ['coc-snippets', 'coc-pairs', 'coc-html', 'coc-tsserver', 'coc-rust-analyzer', 'coc-json', 'coc-vimtex', 'coc-css', 'coc-lua', 'coc-python', 'coc-java', 'coc-java-debug', 'coc-solargraph', 'coc-vetur', 'coc-svelte', 'coc-go', 'coc-clangd']
 
 " coc config
 source $HOME/.config/nvim/plug-config/coc.vim	
@@ -113,19 +105,11 @@ inoremap <silent><expr> <Tab>
       \ CheckBackspace() ? "\<Tab>" :
       \ coc#refresh()
 inoremap <expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "\<CR>""    inoremap <silent><expr> <c-space> coc#refresh()
-" coc vetur (vueJS)
-" the following command needs to be ran in the project root
-" npm i eslint eslint-plugin-vue -D
 
 " theme
-" colorscheme nord 
-" colorscheme dracula
-" colorscheme onedark 
 " autocmd vimenter * ++nested colorscheme gruvbox
 autocmd vimenter * ++nested colorscheme gruvbox-material
-"autocmd vimenter * ++nested colorscheme everforest 
 " set bg=dark
-" autocmd vimenter * ++nested colorscheme nord 
 
 " explorer
 " :nmap <space>e <Cmd>CocCommand explorer<CR>
@@ -166,9 +150,6 @@ require('lualine').setup {
   options = {
     icons_enabled = true,
 	theme = 'gruvbox',
---	theme = 'dracula',
---    theme = 'nord',
---  theme = 'custom_gruvbox',
 --	section_separators = '', 
 --	component_separators = '',
 	component_separators = { left = '', right = ''},
@@ -212,10 +193,14 @@ END
 let g:jedi#completions_enabled = 0
 
 " conjure
-map ee :ConjureEval<CR>
+" map ee :ConjureEval<CR>
 
 " rainbow parentheses
-augroup rainbow_lisp
-  autocmd!
-  autocmd FileType lisp,clojure,scheme RainbowParentheses
-augroup END
+" augroup rainbow_lisp
+"   autocmd!
+"   autocmd FileType lisp,clojure,scheme RainbowParentheses
+" augroup END
+"
+
+" External config file
+luafile ~/.config/nvim/lsp.lua
