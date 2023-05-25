@@ -1,4 +1,4 @@
-# My NeoVim Dotfiles
+# NVim Dotfiles
 
 ## Custom Shortcuts
 
@@ -35,7 +35,7 @@
 'df' deletes file
 
 'yp' copyFilepath
-    
+
 'yn' "copyFilename"
 
 'yy' "copyFile"
@@ -48,7 +48,7 @@
 
 Imports on save
 
-Compile your package with **:GoBuild**, install it with **:GoInstall**  test with **:GoTest** and run with **:GoRun**.   
+Compile your package with **:GoBuild**, install it with **:GoInstall**  test with **:GoTest** and run with **:GoRun**.
 Run a single test with **:GoTestFunc**
 
 Debug programs with integrated delve support with **:GoDebugStart**.
@@ -144,4 +144,3 @@ will generate
  Svelte
 
  LaTex
-
