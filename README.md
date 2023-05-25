@@ -1,146 +1,64 @@
-# NVim Dotfiles
-
-## Custom Shortcuts
-
-### General
-
-'q' closes window
-
-'ctrl w w' navigates trhough windows
-
-'ctrl s' saves
-
-'ctrl t' opens a vertical terminal
-
-'ctrl ]' jumps to function definition
-
-'ctrl T' jumps back from function definition
-
-'gg = G' tides up files
-
-### Explorer
-
-'spc + e'  opens/closes explorer
-
-'l' opens folder/file
-
-'h' closes folder
-
-'a' adds file
-
-'A' adds folder
-
-'s' open split
-
-'df' deletes file
-
-'yp' copyFilepath
-
-'yn' "copyFilename"
-
-'yy' "copyFile"
-
-'dd' 'cutFile'
-
-'p' 'pasteFile'
-
-### Go
-
-Imports on save
-
-Compile your package with **:GoBuild**, install it with **:GoInstall**  test with **:GoTest** and run with **:GoRun**.
-Run a single test with **:GoTestFunc**
-
-Debug programs with integrated delve support with **:GoDebugStart**.
-
-Look up documentation with **:GoDoc** or **:GoDocBrowser**.
-
-Easily import packages via **:GoImport**, remove them via **:GoDrop**.
-
-Precise type-safe renaming of identifiers with **:GoRename.**
-
-See which code is covered by tests with **:GoCoverage.**
-
-Add or remove tags on struct fields with **:GoAddTags and :GoRemoveTags**.
-
-### Rust
-
-Formats on save
-
-**:RustRun** runs the code
-
-**:RustTest** will run the test that is under the curso
-
-### LaTex
-
-'\ll' compiles the document
-
-'ctl s' recompiles it
-
-### Lisp Family languages
-
-'ee' wil conjure a REPL
-
-### Markdown
-
-Preview markdown with **:MarkdownPreview**
-
-### Emmet
-
-'\<c-y\>,' (ctrl y ,) after typing html:5 generates:
-
-```html
-<!DOCTYPE HTML>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title></title>
-</head>
-<body>
-	_
-</body>
-</html>
-```
-
-The same command when applied to 
-
-```html
-div.test
-```
-
-will generate 
-
-```html
-<div class="test">
-</test>
-```
-
-### Languages with code completion && syntax highlighting 
-
- C
-
- C++
-
- C#
-
- Common Lisp
-
- Clojure
-
- CSS
-
- GO
-
- HTML
-
- Rust
-
- Racket
-
- TypeScript
-
- Scheme
-
- Svelte
-
- LaTex
+NeoVim Dotfiles
+===============
+
+This repository contains my configuration files for Neovim with various plugins and settings. It is not meant to be a distribution, nor I would recommend anoyone go out of their way to use it.
+
+Prerequisites
+-------------
+
+ Dependencies:
+
+*   Neovim
+*   Python 3
+*   Node.js and Yarn (required for certain plugins)
+*   `flake8` (Python linter)
+*   `tslint` (TypeScript linter)
+
+Configuration Overview
+----------------------
+
+This Neovim configuration includes the following features:
+
+*   Basic syntax highlighting
+*   Required settings for some plugins
+*   Customized indentation and tab settings
+*   Relative line numbering
+*   UTF-8 encoding
+*   Convenient key mappings and shortcuts
+*   Improved help menu and status bar
+*   Integration with various plugins for different programming languages
+*   Customized themes and colorschemes
+*   Integration with `coc.nvim` for language server support
+*   Configuration for the `lualine.nvim` status line plugin
+
+Acknowledgements
+----------------
+
+This configuration is built upon various plugins and community contributions. Special thanks to the authors and maintainers of the following plugins:
+
+*   [neoclide/coc.nvim](https://github.com/neoclide/coc.nvim)
+*   [morhetz/gruvbox](https://github.com/morhetz/gruvbox)
+*   [iamcco/markdown-preview.nvim](https://github.com/iamcco/markdown-preview.nvim)
+*   [alvan/vim-closetag](https://github.com/alvan/vim-closetag)
+*   [lervag/vimtex](https://github.com/lervag/vimtex)
+*   [mattn/emmet-vim](https://github.com/mattn/emmet-vim)
+*   [fatih/vim-go](https://github.com/fatih/vim-go)
+*   [rust-lang/rust.vim](https://github.com/rust-lang/rust.vim)
+*   [amadeus/vim-css](https://github.com/amadeus/vim-css)
+*   [maxmellon/vim-jsx-pretty](https://github.com/maxmellon/vim-jsx-pretty)
+*   [nvie/vim-flake8](https://github.com/nvie/vim-flake8)
+*   [pangloss/vim-javascript](https://github.com/pangloss/vim-javascript)
+*   [evanleck/vim-svelte](https://github.com/evanleck/vim-svelte)
+*   [nvim-lualine/lualine.nvim](https://github.com/nvim-lualine/lualine.nvim)
+*   [ryanoasis/vim-devicons](https://github.com/ryanoasis/vim-devicons)
+*   [davidhalter/jedi-vim](https://github.com/davidhalter/jedi-vim)
+*   [wlangstroth/vim-racket](https://github.com/wlangstroth/vim-racket)
+*   [tpope/vim-commentary](https://github.com/tpope/vim-commentary)
+*   [othree/html5.vim](https://github.com/othree/html5.vim)
+*   [rhysd/vim-clang-format](https://github.com/rhysd/vim-clang-format)
+*   [preservim/nerdtree](https://github.com/preservim/nerdtree)
+*   [sainnhe/gruvbox-material](https://github.com/sainnhe/gruvbox-material)
+*   [sheerun/vim-polyglot](https://github.com/sheerun/vim-polyglot)
+*   [psf/black](https://github.com/psf/black)
+*   [yaegassy/coc-tailwindcss3](https://github.com/yaegassy/coc-tailwindcss3)
+*   [neovim/nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
