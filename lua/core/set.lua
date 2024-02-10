@@ -1,8 +1,6 @@
--- Make cursor blink on insert mode
 vim.opt.guicursor =
 "n-v-c-sm:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor-blinkwait175-blinkoff150-blinkon175"
 
--- Rest of your existing configurations
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
