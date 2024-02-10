@@ -1,22 +1,18 @@
 -- Make cursor blink on insert mode
-vim.opt.guicursor = "n-v-c-sm:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor-blinkwait175-blinkoff150-blinkon175"
+vim.opt.guicursor =
+"n-v-c-sm:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor-blinkwait175-blinkoff150-blinkon175"
 
 -- Rest of your existing configurations
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
+vim.opt.tabstop = 2
+vim.opt.softtabstop = 2
+vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 
 vim.opt.nu = true
 vim.opt.relativenumber = true
-
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.expandtab = true
 
 vim.opt.smartindent = true
 

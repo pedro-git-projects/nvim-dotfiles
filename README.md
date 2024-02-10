@@ -11,25 +11,7 @@ Prerequisites
 *   Neovim
 *   Python 3
 *   Node.js and Yarn (required for certain plugins)
-*   `flake8` (Python linter)
-*   `tslint` (TypeScript linter)
 
-Configuration Overview
-----------------------
-
-This Neovim configuration includes the following features:
-
-*   Basic syntax highlighting
-*   Required settings for some plugins
-*   Customized indentation and tab settings
-*   Relative line numbering
-*   UTF-8 encoding
-*   Convenient key mappings and shortcuts
-*   Improved help menu and status bar
-*   Integration with various plugins for different programming languages
-*   Customized themes and colorschemes
-*   Integration with `coc.nvim` for language server support
-*   Configuration for the `lualine.nvim` status line plugin
 
 Acknowledgements
 ----------------
