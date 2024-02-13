@@ -78,8 +78,8 @@ return {
           'gopls',
           'pyright',
           'clangd',
-          'rust_analyzer',
           'zls',
+          'rust_analyzer', 
         },
         handlers = {
           lsp_zero.default_setup,
