@@ -19,7 +19,7 @@ return {
     'hrsh7th/nvim-cmp',
     event = 'InsertEnter',
     dependencies = {
-      { 'L3MON4D3/LuaSnip' },
+      { 'L3MON4D3/LuaSnip', "hrsh7th/cmp-path" },
     },
     config = function()
       local lsp_zero = require('lsp-zero')
@@ -30,6 +30,11 @@ return {
       local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
       cmp.setup({
+        sources = {
+          { name = 'path' },
+          { name = 'nvim_lsp' },
+          { name = 'luasnip' },
+        },
         formatting = lsp_zero.cmp_format(),
         mapping = cmp.mapping.preset.insert({
           ['<Tab>'] = cmp.mapping.select_next_item(cmp_select),
@@ -81,6 +86,8 @@ return {
           'clangd',
           'zls',
           'rust_analyzer',
+          'biome',
+          'cssls',
         },
         handlers = {
           lsp_zero.default_setup,
@@ -104,6 +111,12 @@ return {
           end,
           zls = function()
             require('lspconfig').zls.setup({})
+          end,
+          biome = function()
+            require('lspconfig').biome.setup({})
+          end,
+          cssls = function()
+            require('lspconfig').cssls.setup({})
           end,
         }
       })
