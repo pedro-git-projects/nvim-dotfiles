@@ -76,10 +76,10 @@ return {
         vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
       end
 
+      lsp_zero.on_attach(on_attach)
 
       require('mason-lspconfig').setup({
         ensure_installed = {
-          'tsserver',
           'lua_ls',
           'gopls',
           'pyright',
@@ -93,9 +93,6 @@ return {
           lsp_zero.default_setup,
           lua_ls = function()
             require('lspconfig').lua_ls.setup({})
-          end,
-          tsserver = function()
-            require('lspconfig').tsserver.setup({})
           end,
           gopls = function()
             require('lspconfig').gopls.setup({})
