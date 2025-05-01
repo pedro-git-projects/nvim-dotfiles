@@ -62,7 +62,7 @@ return {
       local lsp_zero = require('lsp-zero')
       lsp_zero.extend_lspconfig()
 
-      local function on_attach(client, bufnr)
+      lsp_zero.on_attach(function(client, bufnr)
         local opts = { buffer = bufnr, remap = false }
         vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
         vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
@@ -74,12 +74,11 @@ return {
         vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, opts)
         vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
         vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
-      end
-
-      lsp_zero.on_attach(on_attach)
+      end)
 
       require('mason-lspconfig').setup({
         ensure_installed = {
+          -- 'tsserver',
           'lua_ls',
           'gopls',
           'pyright',
@@ -88,12 +87,16 @@ return {
           'rust_analyzer',
           'biome',
           'cssls',
+          -- 'jdtls',
         },
         handlers = {
           lsp_zero.default_setup,
           lua_ls = function()
             require('lspconfig').lua_ls.setup({})
           end,
+          -- tsserver = function()
+          --   require('lspconfig').tsserver.setup({})
+          -- end,
           gopls = function()
             require('lspconfig').gopls.setup({})
           end,
@@ -104,7 +107,12 @@ return {
             require('lspconfig').pyright.setup({})
           end,
           clangd = function()
-            require('lspconfig').clangd.setup({})
+            require('lspconfig').clangd.setup({
+              cmd = {
+                "clangd",
+                "--fallback-style=Google",
+              },
+            })
           end,
           zls = function()
             require('lspconfig').zls.setup({})
@@ -115,6 +123,9 @@ return {
           cssls = function()
             require('lspconfig').cssls.setup({})
           end,
+          -- jdtls = function()
+          --   require('lspconfig').jdtls.setup({})
+          -- end,
         }
       })
     end
